@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @tasq = @project.tasqs.new
+    @tasqs = @project.tasqs.all()
   end
   
   def new

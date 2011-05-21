@@ -10,7 +10,8 @@
     <tr>
       <td><%= tasq.name %></td>
       <td><%= tasq.status_id %></td>
-      <td><%= tasq.user_id %></td>
+      <td><%= tasq.user_id %> <%=tasq.project_id%></td>
+
       <td><%= link_to "Show", tasq %></td>
       <td><%= link_to "Edit", edit_tasq_path(tasq) %></td>
       <td><%= link_to "Destroy", tasq, :confirm => 'Are you sure?', :method => :delete %></td>

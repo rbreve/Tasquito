@@ -1,0 +1,2 @@
+module TasqsHelper
+end

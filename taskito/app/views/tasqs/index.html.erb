@@ -1,0 +1,21 @@
+<% title "Tasqs" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+    <th>User</th>
+  </tr>
+  <% for tasq in @tasqs %>
+    <tr>
+      <td><%= tasq.name %></td>
+      <td><%= tasq.status_id %></td>
+      <td><%= tasq.user_id %></td>
+      <td><%= link_to "Show", tasq %></td>
+      <td><%= link_to "Edit", edit_tasq_path(tasq) %></td>
+      <td><%= link_to "Destroy", tasq, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Tasq", new_tasq_path %></p>

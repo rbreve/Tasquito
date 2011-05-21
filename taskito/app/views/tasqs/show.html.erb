@@ -1,0 +1,20 @@
+<% title "Tasq" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tasq.name %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @tasq.status_id %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @tasq.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_tasq_path(@tasq) %> |
+  <%= link_to "Destroy", @tasq, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", tasqs_path %>
+</p>

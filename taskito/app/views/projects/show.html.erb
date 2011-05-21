@@ -1,19 +1,25 @@
-<% title "Project" %>
+<h1>
+   <%= @project.name %>
+</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
 
 <%= form_for @tasq do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label "Task Descripction" %><br />
+    <%= f.text_area :name, :cols=>70, :rows=>3 %>
+	<%= f.hidden_field :project_id%>
   </p>
- 
-  <p><%= f.submit  %></p>
+  <p><button class="blue-pill">Add Task</button></p>
 <% end %>
+
+<h3>
+Current Tasks
+</h3>
+ 
+<% for tasq in @tasqs %>
+    <%= tasq.name %> <br/>
+ <% end %>
 
 <p>
   <%= link_to "Edit", edit_project_path(@project) %> |

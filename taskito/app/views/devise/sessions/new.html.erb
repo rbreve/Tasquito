@@ -1,8 +1,12 @@
-<h2>Sign in</h2>
+<h1>Tasquito</h2>
+<h3>Easy way of managing and reviewing tasks</h1>
+<h2> Login</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <p><%= f.label :email %><br />
   <%= f.email_field :email %></p>
+
+
 
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>

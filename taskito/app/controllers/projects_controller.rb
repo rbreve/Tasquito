@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
-    @projects = Project.all
+    @projects = current_user.projects.all()
   end
   
   def show
@@ -13,8 +15,16 @@ class ProjectsController < ApplicationController
   
   def create
     
-    @project = current_user.project.new(params[:project])
+    @project = Project.new(params[:project])
+    
+  
+    
     if @project.save
+      @userproject = UserProject.new()
+      @userproject.project_id = @project.id
+      @userproject.user_id = current_user.id
+      @userproject.save()
+      
       flash[:notice] = "Successfully created project."
       redirect_to @project
     else

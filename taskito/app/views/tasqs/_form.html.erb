@@ -2,15 +2,15 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :size=>100 %>
   </p>
   <p>
-    <%= f.label :status_id %><br />
-    <%= f.text_field :status_id %>
+    <%= f.label :worker %><br />
+    <%= text_field_tag :worker %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :reviewers %><br />
+    <%= text_field_tag :reviewers %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

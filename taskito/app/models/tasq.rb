@@ -3,4 +3,5 @@ class Tasq < ActiveRecord::Base
   
   has_many :user_tasqs
   has_many :users, :through => :user_tasqs
+  belongs_to :users
 end

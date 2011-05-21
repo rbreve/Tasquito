@@ -10,13 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110521212216) do
+=======
+ActiveRecord::Schema.define(:version => 20110521203237) do
+>>>>>>> 41756e6c4c0c3c73d564156e52a8154237987555
 
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "repo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",    :default => 1
   end
 
   create_table "tasqs", :force => true do |t|
@@ -40,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20110521212216) do
     t.integer  "tasq_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role",       :limit => 1, :default => "w"
   end
 
   create_table "users", :force => true do |t|

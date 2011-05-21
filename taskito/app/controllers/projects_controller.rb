@@ -19,8 +19,6 @@ class ProjectsController < ApplicationController
     
     @project = Project.new(params[:project])
     
-  
-    
     if @project.save
       @userproject = UserProject.new()
       @userproject.project_id = @project.id

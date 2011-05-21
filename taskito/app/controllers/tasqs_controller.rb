@@ -13,8 +13,16 @@ class TasqsController < ApplicationController
   
   def create
     @tasq = Tasq.new(params[:tasq])
-    
-    if @tasq.save
+    @tasq.user_id=current_user.id 
+    @tasq.status_id=1
+    if @tasq.save                                       
+      
+      #-- replace these user_ids by the one sent by the autocomplete ajax:
+      worker = UserTasq.new(:tasq_id=>@tasq.id,:user_id=>"2",:role=>"w")    # --- Worker Role
+      reviewer = UserTasq.new(:tasq_id=>@tasq.id,:user_id=>current_user.id,:role=>"r")  # --- Reviewer Role
+      worker.save
+      reviewer.save
+      
       flash[:notice] = "Successfully created tasq."
       redirect_to @tasq
     else

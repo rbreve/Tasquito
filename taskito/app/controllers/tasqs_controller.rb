@@ -13,6 +13,7 @@ class TasqsController < ApplicationController
   
   def create
     @tasq = Tasq.new(params[:tasq])
+    
     if @tasq.save
       flash[:notice] = "Successfully created tasq."
       redirect_to @tasq

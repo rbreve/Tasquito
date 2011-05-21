@@ -4,10 +4,16 @@
   <strong>Name:</strong>
   <%= @project.name %>
 </p>
-<p>
-  <strong>Repo:</strong>
-  <%= @project.repo %>
-</p>
+
+<%= form_for @tasq do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p><%= f.submit  %></p>
+<% end %>
 
 <p>
   <%= link_to "Edit", edit_project_path(@project) %> |
